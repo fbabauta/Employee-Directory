@@ -21,6 +21,8 @@ Employee Directory was built with React and utilizes Create React App as a boile
 
 ## Finished Product 
 View deployed application [here](https://fbabauta.github.io/Employee-Directory/). 
+![image](https://user-images.githubusercontent.com/70370805/110019460-57f19980-7cdd-11eb-9291-5e9fd5ffbf9d.png)
+
 
 ## Questions
 If you have any questions about the repo, please contact me:
