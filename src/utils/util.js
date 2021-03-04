@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 export default {
     formatPhoneNumber: function (phoneNum) {
         // strips the string of all characeters that aren't a number
