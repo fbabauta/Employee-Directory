@@ -1,40 +1,54 @@
-import React from 'react';
-import './style.css';
-import EmployeeRow from './EmployeeRow';
-import TableHead from './TableHead';
-import util from '../../utils/util';
+import React from "react";
+import "./style.css"
 
-class ResultsTable extends React.Component {
+const EmployeeTable = (props) => {
+    return (
+        <table className="table table-striped table-sortable text-center">
+            <thead>
+                <tr>
+                    <th scope="col">Image</th>
+                    <th scope="col" data-field="name" data-sortable="true">
+                        <span onClick={() => props.sortBy("name", "last", "first")}>
+                            Name
+            </span>
+                    </th>
+                    <th scope="col">
+                        <span onClick={() => props.sortBy("phone")}>Phone</span>
+                    </th>
+                    <th scope="col">
+                        <span onClick={() => props.sortBy("email")}>Email</span>
+                    </th>
+                    <th scope="col">
+                        <span onClick={() => props.sortBy("dob", "date")}>DOB</span>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                {props.state.filteredEmployees.map((employee) => {
+                    const { first, last } = employee.name;
+                    const fullName = `${first} ${last}`;
 
-    render() {
-        return (
-            <div className="uk-container table-container">
-                <table className="uk-table uk-table-striped table">
-                    <TableHead
-                        handleArrowClick={this.props.handleArrowClick}
-                        order={this.props.order}
-                    />
-                    <tbody>
-                        {
-                            this.props.employees.map(e => {
-                                let date = new Date(e.dob.date);
-                                let dateStr = date.toLocaleDateString();
-
-                                return <EmployeeRow
-                                    key={this.props.employees.indexOf(e)}
-                                    img={e.picture.thumbnail}
-                                    name={`${e.name.first} ${e.name.last}`}
-                                    phone={util.formatPhoneNumber(e.stripPhone)}
-                                    email={e.email}
-                                    dob={dateStr}
-                                />
-                            })
-                        }
-                    </tbody>
-                </table>
-            </div>
-        )
-    }
+                    // Format date
+                    const dob = props.formatDate(employee.dob.date);
+            
+                    return (
+                        <tr key={employee.login.uuid}>
+                            <td>
+                                <img src={employee.picture.thumbnail} alt={fullName} />
+                            </td>
+                            <td className="align-middle">{fullName</td>
+                            <td className="align-middle">
+                                <a href={`tel:+1${employee.phone}`}>{employee.phone}</a></td>
+                            <td className="align-middle email">
+                                <a href={`mailto:${employee.email}`}>{employee.email}</a>
+                            </td>
+                            <td className="align-middle">{dob}</td>
+                        </tr>
+                    );
+                })}
+            </tbody>
+        </table>
+    );
 };
 
-export default ResultsTable;
+export default EmployeeTable;
