@@ -1,0 +1,35 @@
+.header-container {
+    text-align: center;
+    padding: 100px 0px 100px 0px;
+    background-color: #228ff1;
+    width: 100%;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.title, .subtitle {
+    color: white;
+}
+
+.about-btn {
+    background: none;
+    border: .5px solid white;
+    color: white;
+    font-size: 13px;
+    text-transform: uppercase;
+    border-radius: 20px;
+    padding: 10px 30px 10px 30px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    letter-spacing: 2px;
+}
+
+.about-btn:hover, .about-btn:focus {
+    background: white;
+    color: #228ff1;
+    outline: none;
+}
+
+.about-section {
+    font-size: 14px;
+}
