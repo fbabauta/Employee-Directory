@@ -31,11 +31,11 @@ function TableHead(props) {
         <thead className="table-head">
             <tr>
                 <th></th>
-                <th onClick{() => props.handleArrowClick("name", "first")}>
+                <th onClick={() => props.handleArrowClick("name", "first")}>
                     <a>Name</a>
                     <span className="icon" uk-icon={nameIcon} />
                 </th>
-                <th onClick{() => props.handleArrowClick("stripPhone")}>
+                <th onClick={() => props.handleArrowClick("stripPhone")}>
                     <a>Phone</a>
                     <span className="icon" uk-icon={phoneIcon} />
                 </th>

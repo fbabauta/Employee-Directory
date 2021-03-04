@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const style = {
     icon: {
@@ -11,7 +11,7 @@ const style = {
         padding: "15px",
     },
 
-    text {
+    text: {
         fontWeight: "100",
         fontSize: 12,
         textTransform: "uppercase",
