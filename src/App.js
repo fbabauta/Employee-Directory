@@ -1,11 +1,15 @@
 import React from 'react';
-import './index.css';
-import Homepage from './pages/Homepage';
+import './App.css';
+import Header from './components/Header';
+import EmployeesContainer from './components/Container/EmployeesContainer';
 
-function App() {
+const App = () => {
   return (
-    <Homepage />
+    <>
+      <Header />
+      <EmployeesContainer />
+    </>
   );
-}
-
+};
+   
 export default App;
